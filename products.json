@@ -1,0 +1,23 @@
+[
+  {
+    "id": "prod-001",
+    "title": "Combo desayuno artesanal",
+    "price_usd": 6.5,
+    "images": ["assets/producto-1.jpg"],
+    "description": "Pan de masa madre, mermelada casera, queso crema y jugo natural."
+  },
+  {
+    "id": "prod-002",
+    "title": "Box veggie",
+    "price_usd": 9.9,
+    "images": ["assets/producto-2.jpg"],
+    "description": "Ensalada con mix de hojas, hummus, quinoa y frutos secos."
+  },
+  {
+    "id": "prod-003",
+    "title": "Torta de chocolate",
+    "price_usd": 12.0,
+    "images": ["assets/producto-3.jpg"],
+    "description": "Porción generosa con cobertura de ganache y frutos rojos."
+  }
+]
