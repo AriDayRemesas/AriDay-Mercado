@@ -1,0 +1,9 @@
+{
+  "source": "binance",
+  "base": "USDT",
+  "quote": "ARS",
+  "price": 1000,
+  "markup": 0.1,
+  "final_rate": 1100,
+  "updated_at": "2026-02-23T00:00:00.000Z"
+}
