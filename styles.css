@@ -177,6 +177,21 @@ main {
   color: var(--muted);
 }
 
+.whatsapp-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #25d366;
+  color: #ffffff;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.whatsapp-button:hover {
+  filter: brightness(0.95);
+}
+
 @media (min-width: 768px) {
   header.site-header {
     flex-direction: row;
