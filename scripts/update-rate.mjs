@@ -1,27 +1,27 @@
 import { writeFile } from "node:fs/promises";
 
-const BINANCE_URL =
-  "https://api.binance.com/api/v3/ticker/price?symbol=USDTARS";
+const COINGECKO_URL =
+  "https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=ars";
 const MARKUP = 0.1;
 const OUTPUT_PATH = new URL("../rate.json", import.meta.url);
 
 async function fetchRate() {
-  const response = await fetch(BINANCE_URL);
+  const response = await fetch(COINGECKO_URL);
   if (!response.ok) {
-    throw new Error(`Binance error: ${response.status}`);
+    throw new Error(`CoinGecko error: ${response.status}`);
   }
 
   const data = await response.json();
-  const price = Number.parseFloat(data.price);
+  const price = Number.parseFloat(data?.tether?.ars);
 
   if (!Number.isFinite(price)) {
-    throw new Error("Precio inválido recibido desde Binance.");
+    throw new Error("Precio inválido recibido desde CoinGecko.");
   }
 
   const finalRate = Number((price * (1 + MARKUP)).toFixed(2));
 
   return {
-    source: "binance",
+    source: "coingecko",
     base: "USDT",
     quote: "ARS",
     price: Number(price.toFixed(2)),
