@@ -10,6 +10,7 @@ const modalTitle = document.getElementById("modal-title");
 const modalPrice = document.getElementById("modal-price");
 const modalDescription = document.getElementById("modal-description");
 const modalUsd = document.getElementById("modal-usd");
+const modalWhatsapp = document.getElementById("modal-whatsapp");
 
 const formatter = new Intl.NumberFormat("es-AR", {
   style: "currency",
@@ -74,6 +75,9 @@ function openModal(product, rate) {
   modalPrice.textContent = formatArs(product.price_usd * rate.final_rate);
   modalDescription.textContent = product.description;
   modalUsd.textContent = `USD ${product.price_usd.toFixed(2)} · Actualizado ${formatDate(rate.updated_at)}`;
+  const phone = "5491165218910";
+  const message = `Quiero comprar ${product.title}`;
+  modalWhatsapp.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
   modal.classList.remove("hidden");
   modal.setAttribute("aria-hidden", "false");
@@ -127,14 +131,14 @@ async function loadCatalog() {
     const products = await productsResponse.json();
     const rate = await rateResponse.json();
 
-    rateStatus.textContent = `Tipo de cambio aplicado: ${formatArs(rate.final_rate)} · ${formatDate(rate.updated_at)}`;
+    rateStatus.textContent = formatDate(rate.updated_at);
     grid.innerHTML = "";
 
     products.forEach((product) => {
       grid.appendChild(createCard(product, rate));
     });
   } catch (error) {
-    rateStatus.textContent = "No se pudo obtener el precio.";
+    rateStatus.textContent = "No se pudo obtener el tipo de cambio.";
     setError("Hubo un problema cargando el catálogo. Reintentá más tarde.");
     console.error(error);
   }
