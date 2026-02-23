@@ -1,9 +1,9 @@
 {
-  "source": "binance",
+  "source": "coingecko",
   "base": "USDT",
   "quote": "ARS",
-  "price": 1000,
+  "price": 1369.01,
   "markup": 0.1,
-  "final_rate": 1100,
-  "updated_at": "2026-02-23T00:00:00.000Z"
+  "final_rate": 1505.91,
+  "updated_at": "2026-02-23T22:34:29.859Z"
 }
