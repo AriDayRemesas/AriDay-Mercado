@@ -2,8 +2,8 @@
   "source": "coingecko",
   "base": "USDT",
   "quote": "ARS",
-  "price": 1379.75,
+  "price": 1379.52,
   "markup": 0.1,
-  "final_rate": 1517.73,
-  "updated_at": "2026-02-25T01:29:01.475Z"
+  "final_rate": 1517.47,
+  "updated_at": "2026-02-25T04:14:08.065Z"
 }
